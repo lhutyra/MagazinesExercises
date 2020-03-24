@@ -57,6 +57,14 @@ public class Magazine : IMagazine, IEquatable<Magazine>
         return this.Equals(other);
     }
 
+    public override int GetHashCode()
+    {
+        unchecked
+        {
+            return MagazineName.GetHashCode();
+        }
+    }
+
     public bool Equals([AllowNull] Magazine other)
     {
         return other.MagazineName == this.MagazineName;
