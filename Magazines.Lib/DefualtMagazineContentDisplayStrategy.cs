@@ -7,7 +7,7 @@ namespace Magazines.Lib
     public class DefualtMagazineContentDisplayStrategy : IMagazineContentDisplayStrategy
     {
         protected const string materialDisplayFormat = "{0}: {1}";
-        public string DisplayContent(IEnumerable<IMagazine> magazines)
+        public string DisplayContent(IReadOnlyCollection<IMagazine> magazines)
         {
             StringBuilder stringBuilder = new StringBuilder();
             var magazinesOrder = magazines.OrderByDescending(f => f.TotalInMagazine()).ThenByDescending(f => f.MagazineName);

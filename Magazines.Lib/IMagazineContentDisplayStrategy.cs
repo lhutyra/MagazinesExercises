@@ -6,6 +6,6 @@ namespace Magazines.Lib
 {
     public interface IMagazineContentDisplayStrategy
     {
-        string DisplayContent(IEnumerable<IMagazine> magazine);
+        string DisplayContent(IReadOnlyCollection<IMagazine> magazine);
     }
 }

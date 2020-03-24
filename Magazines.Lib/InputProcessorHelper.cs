@@ -30,19 +30,17 @@ namespace Magazines.Lib
                 var warehouseStock = materialContent[2].Split('|');
                 foreach (var materialData in warehouseStock)
                 {
-                    var materialOne = ParseMaterialWithQuantity(materialData);
-                    var materialQuantity = MaterialQuantity.From(material, materialOne.Item2);
-                    magazineManager.RegisterMaterialWithinMagazine(materialOne.Item1, materialQuantity);
+                    var materialStock = ParseMaterialWithQuantity(materialData);
+                    var materialQuantity = MaterialQuantity.From(material, materialStock.Item2);
+                    magazineManager.RegisterMaterialWithinMagazine(materialStock.Item1, materialQuantity);
                 }
             }
         }
-
-
         public void ReadAllTextAndProcess(string inputText)
         {
             foreach (var line in inputText.Split(Environment.NewLine))
             {
-                if (!line.StartsWith("#"))
+                if (!line.StartsWith(ignoreLineSign))
                 {
                     ParseLine(line);
                 }

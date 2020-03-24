@@ -36,7 +36,7 @@ public class MagazineManager : IMagazineManager
 
     public string DisplayContentOfMagazines(IMagazineContentDisplayStrategy displayStrategy)
     {
-        return displayStrategy.DisplayContent(this.magazineList);
+        return displayStrategy.DisplayContent(this.List());
     }
  
 }

@@ -11,9 +11,22 @@ public class Material : IEquatable<Material>
         MaterialId = materialId;
         MaterialName = materialName;
     }
-    public override string ToString()
+    public override bool Equals(object right)
     {
-        return $"{MaterialName} #{MaterialId}";
+        if (object.ReferenceEquals(right, null))
+        {
+            return false;
+        }
+        if (object.ReferenceEquals(this, right))
+        {
+            return true;
+        }
+        Material other = right as Material;
+        if (other == null)
+        {
+            return false;
+        }
+        return this.Equals(other);
     }
 
     public bool Equals([AllowNull] Material other)
