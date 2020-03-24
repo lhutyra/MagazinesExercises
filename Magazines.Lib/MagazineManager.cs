@@ -38,5 +38,11 @@ public class MagazineManager : IMagazineManager
     {
         return displayStrategy.DisplayContent(this.List());
     }
+
+    public void ClearMagazines()
+    {
+        this.magazineList.Clear();
+        this.magazines.Clear();
+    }
  
 }

@@ -20,5 +20,7 @@ namespace Magazines.Tests
             var createdMaterialQuantity = MaterialQuantity.From(It.IsAny<Material>(), 10);
             Assert.NotNull(createdMaterialQuantity);
         }
+
+       
     }
 }

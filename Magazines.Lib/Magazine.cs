@@ -38,7 +38,6 @@ public class Magazine : IMagazine, IEquatable<Magazine>
     {
         return _materialInMagazine.Values.Sum();
     }
-
     public override bool Equals(object right)
     {
         if (object.ReferenceEquals(right, null))
