@@ -20,8 +20,11 @@ MDF, CARB2, 1 1/8;COM-101734;WH-C,8 ";
         {
             var magazineManager = new MagazineManager();
             InputProcessorHelper parserHelper = new InputProcessorHelper(magazineManager);
-            //var inputText = Console.ReadLine();
-            parserHelper.ReadAllTextAndProcess(inputString);
+            string line;
+            while ((line = Console.ReadLine()) != null && line != "")
+            {
+                parserHelper.ParseLine(line);
+            }
             var result = magazineManager.DisplayContentOfMagazines(new DefualtMagazineContentDisplayStrategy());
             Console.WriteLine(result);
             Console.ReadLine();
